@@ -1,11 +1,11 @@
 manifestVersion: 1
 id: corbee-calibre-web-automated
 name: Calibre
-tagline: Replace this tagline with your app's tagline
+tagline: Books
 icon: https://www.svgrepo.com/download/528059/book-bookmark.svg
 category: Media
 version: "1.0.0"
-port: 14161
+port: 14162
 description: >-
   Calibre-Web Automated aims to be an all-in-one solution, combining the modern lightweight web UI from Calibre-Web with the robust, versatile feature set of Calibre, with a slew of extra features and automations thrown in on top.
 
@@ -16,6 +16,9 @@ submission: https://github.com/getumbrel/umbrel-hello-world-app
 repo: https://github.com/getumbrel/umbrel-hello-world-app
 support: https://github.com/getumbrel/umbrel-hello-world-app/issues
 gallery:
+  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://i.imgur.com/yyVG0Jb.jpeg
 releaseNotes: >-
   Initial release
 dependencies: []

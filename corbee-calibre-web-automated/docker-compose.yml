@@ -20,13 +20,13 @@ services:
       - ${UMBREL_ROOT}/data/storage/downloads/library:/calibre-library 
     ports:
       # Change the first number to change the port you want to access the Web UI, not the second
-      - 14161:8083 
+      - 14162:8083 
     restart: unless-stopped
   app_proxy:
     environment:
       # The format here is: <app-id>_<docker-service-name>_1
       APP_HOST: corbee-calibre-web_web_1
-      APP_PORT: 14161
+      APP_PORT: 14162
     
   server:
     image: getumbrel/community-app-store-hello-world:latest
