@@ -4,18 +4,17 @@ services:
   app_proxy:
     environment:
       # The format here is: <app-id>_<docker-service-name>_1
-      APP_HOST: corbee-calibre_web_1
+      APP_HOST: web
       APP_PORT: 8083
       PROXY_AUTH_ADD: "false"
+    networks:
+      - default
 
   web:
     image: crocodilestick/calibre-web-automated:latest
-    user: 1000:1000
+    user: "1000:1000"
     init: true
     restart: on-failure
-    stop_grace_period: 1m
-    healthcheck:
-      disable: true
     environment:
       # Only change these if you know what you're doing
       - PUID=1000
@@ -31,5 +30,9 @@ services:
       - ${UMBREL_ROOT}/data/storage/downloads/library:/calibre-library 
     ports:
       # Change the first number to change the port you want to access the Web UI, not the second
-      - 8083:8083 
-    
+      - 8083:8083
+    networks:
+      - default
+
+networks:
+  default:
