@@ -3,7 +3,7 @@ services:
     environment:
       # The format here is: <app-id>_<docker-service-name>_1
       APP_HOST: corbee-calibre_web_1
-      APP_PORT: 80
+      APP_PORT: 6063
       PROXY_AUTH_ADD: "false"
 
   web:
@@ -25,4 +25,4 @@ services:
       - ${UMBREL_ROOT}/data/storage/downloads/library:/calibre-library 
     ports:
       # Change the first number to change the port you want to access the Web UI, not the second
-      - 8083:8083
+      - 6063:8083
