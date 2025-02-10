@@ -25,4 +25,4 @@ services:
       - ${UMBREL_ROOT}/data/storage/downloads/library:/calibre-library 
     ports:
       # Change the first number to change the port you want to access the Web UI, not the second
-      - 6084:8083
+      - 8083:8083
