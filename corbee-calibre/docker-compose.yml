@@ -7,15 +7,9 @@ services:
 
   web:
     image: crocodilestick/calibre-web-automated:latest
-    user: "911:911"
     restart: on-failure
     environment:
-      - PUID=911
-      - PGID=911
       - TZ=EEST
-      - UMASK=022
-      - USER_ID=911
-      - GROUP_ID=911
     volumes:
       - ${APP_DATA_DIR}/data/config:/config 
       - ${APP_DATA_DIR}/data/ingest:/cwa-book-ingest
