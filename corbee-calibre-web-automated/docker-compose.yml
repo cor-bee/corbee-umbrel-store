@@ -25,7 +25,7 @@ services:
   app_proxy:
     environment:
       # The format here is: <app-id>_<docker-service-name>_1
-      APP_HOST: corbee-calibre-web_web_1
+      APP_HOST: corbee-calibre-web-automated_web_1
       APP_PORT: 14162
     
   server:
