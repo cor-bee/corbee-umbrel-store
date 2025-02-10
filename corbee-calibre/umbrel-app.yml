@@ -5,7 +5,7 @@ tagline: Books
 icon: https://www.svgrepo.com/download/528059/book-bookmark.svg
 category: media
 version: "1.0.2"
-port: 6063
+port: 8063
 description: >-
   Calibre-Web Automated aims to be an all-in-one solution, combining the modern lightweight web UI from Calibre-Web with the robust, versatile feature set of Calibre, with a slew of extra features and automations thrown in on top.
 

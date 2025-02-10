@@ -1,28 +1,24 @@
 services:
   app_proxy:
     environment:
-      # The format here is: <app-id>_<docker-service-name>_1
       APP_HOST: corbee-calibre_web_1
-      APP_PORT: 6063
+      APP_PORT: 8083
       PROXY_AUTH_ADD: "false"
 
   web:
     image: crocodilestick/calibre-web-automated:latest
-    user: "1000:1000"
+    user: "911:911"
     restart: on-failure
     environment:
-      # Only change these if you know what you're doing
-      - PUID=1000
-      - PGID=1000
-      # Edit to match your current timezone https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-      - TZ=EEST 
+      - PUID=911
+      - PGID=911
+      - TZ=EEST
+      - UMASK=022
+      - USER_ID=911
+      - GROUP_ID=911
     volumes:
-      # CW users migrating should stop their existing CW instance, make a copy of the config folder, and bind that here to carry over all of their user settings ect.
       - ${APP_DATA_DIR}/data/config:/config 
-      # This is an ingest dir, NOT a library one. Anything added here will be automatically added to your library according to the settings you have configured in CWA Settings page. All files placed here are REMOVED AFTER PROCESSING
       - ${APP_DATA_DIR}/data/ingest:/cwa-book-ingest
-      # If you don't have an existing library, CWA will automatically create one at the bind provided here
       - ${UMBREL_ROOT}/data/storage/downloads/library:/calibre-library 
     ports:
-      # Change the first number to change the port you want to access the Web UI, not the second
       - 8083:8083
