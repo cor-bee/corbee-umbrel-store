@@ -9,7 +9,7 @@ services:
     image: crocodilestick/calibre-web-automated:latest
     restart: on-failure
     environment:
-      - TZ=EEST
+      - TZ=Europe/Athens
     volumes:
       - ${APP_DATA_DIR}/data/config:/config 
       - ${APP_DATA_DIR}/data/ingest:/cwa-book-ingest
